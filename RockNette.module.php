@@ -91,14 +91,16 @@ class RockNette extends WireData implements Module, ConfigurableModule {
       'type' => 'markup',
       'label' => 'Usage',
       'icon' => 'code',
-      'value' => "Usage is exactly the same as shown in the Nette Docs:"
+      'value' => "Usage is almost the same as shown in the Nette Docs:"
         ." eg <a href='https://github.com/nette/forms' target='_blank'>https://github.com/nette/forms</a>"
-        ."<pre>use Nette\Forms\Form;<br>"
+        ."<pre>use \Nette\Forms\Form;<br>"
         .'$form = new Form;<br>'
         ."\$form->addText('name', 'Name:');<br>"
         ."\$form->addPassword('password', 'Password:');<br>"
         ."\$form->addSubmit('send', 'Register');<br>"
-        ."echo \$form; // renders the form",
+        ."echo \$form; // renders the form"
+        ."</pre>",
+      'notes' => "Different to the Nette docs you need to prepend 'Nette' with a backslash when you are working in a ProcessWire namespaced file (which will likely be the case most of the time).",
     ]);
 
     return $inputfields;
