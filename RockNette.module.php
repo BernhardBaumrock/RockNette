@@ -76,7 +76,9 @@ class RockNette extends WireData implements Module, ConfigurableModule {
       'type' => 'markup',
       'label' => 'HowTo: Load Nette Packages',
       'icon' => 'cubes',
-      'value' => "Go to <a href='https://nette.org/en/packages'>https://nette.org/en/packages</a> and find your package. Then install it via composer:"
+      'value' => "Go to <a href='https://nette.org/en/packages' target='_blank'>"
+        ."https://nette.org/en/packages</a> and find your package."
+        ." Then install it via composer:"
         ."<br><pre>"
         ."cd {$this->path}<br>"
         ."composer require nette/forms"
