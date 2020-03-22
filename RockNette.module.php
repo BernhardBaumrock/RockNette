@@ -52,7 +52,9 @@ class RockNette extends WireData implements Module, ConfigurableModule {
    */
   public function getPackages() {
     $packages = [];
-    foreach (new \DirectoryIterator($this->path."/vendor/nette/") as $file) {
+    $path = $this->path."/vendor/nette/";
+    $this->files->mkdir($path, true);
+    foreach (new \DirectoryIterator($path) as $file) {
       if($file->isDot()) continue;
       $packages[] = $file->getBasename();
     }
