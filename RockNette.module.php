@@ -30,7 +30,7 @@ class RockNette extends WireData implements Module, ConfigurableModule {
     // prevent all direct access to this folder
     $htaccess = "$path/.htaccess";
     if(!is_file($htaccess)) {
-      $this->files->filePutContents($htaccess, "deny from all");
+      $this->files->filePutContents($htaccess, "Deny from all");
     }
 
     // load nette
