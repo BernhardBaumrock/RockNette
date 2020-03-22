@@ -67,10 +67,11 @@ class RockNette extends WireData implements Module, ConfigurableModule {
   */
   public function getModuleConfigInputfields($inputfields) {
     $packages = implode(', ', $this->getPackages());
+    if($packages) $packages = " ($packages)";
     $inputfields->add([
       'type' => 'checkbox',
       'name' => 'autoload',
-      'label' => "Autoload available Nette Packages ($packages)",
+      'label' => "Autoload available Nette Packages",
       'checked' => $this->autoload ? 'checked' : '',
       'notes' => "If you don't autoload Nette, you have to load it manually: \$modules->get('RockNette')->load();",
     ]);
